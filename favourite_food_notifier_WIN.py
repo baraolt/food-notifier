@@ -17,9 +17,6 @@ if __name__ == '__main__':
     menu = bs4.BeautifulSoup(getPage.text, 'html.parser')
     foods = menu.select('.foodname')
 
-    flength = len(the_one)
-    available = False
-
     for food in foods:
         if the_one in food.text.lower():
             conn = smtplib.SMTP('smtp.gmail.com', 587)  # smtp address and port
